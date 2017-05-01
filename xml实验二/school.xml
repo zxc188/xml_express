@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="school.xsl" type="text/xsl"?>
+<?xml-stylesheet href="classes.xsl" type="text/xsl"?>
+<School>
+	<Teachers>
+		<Teacher number="0003" age="40" sex="男">
+			<name>陈若愚</name>
+			<whichsubject>c语言</whichsubject>
+		</Teacher>
+		<Teacher number="0001" age="30" sex="女">
+			<name>侯霞</name>
+			<whichsubject>xml</whichsubject>
+		</Teacher>
+		<Teacher number="0002" age="35" sex="男">
+			<name>郝保水</name>
+			<whichsubject>android</whichsubject>
+		</Teacher>
+	</Teachers>
+	<Subjects>
+		<Subject NumofSub="0001">
+			<NameofSub>xml</NameofSub>
+			<classroom>软工1501</classroom>
+		</Subject>
+		<Subject NumofSub="0002">
+			<NameofSub>android</NameofSub>
+			<classroom>软工1501</classroom>
+		</Subject>
+		<Subject NumofSub="0003">
+			<NameofSub>c语言</NameofSub>
+			<classroom>软工1501 软工1502</classroom>
+		</Subject>
+	</Subjects>
+</School>

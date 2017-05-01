@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="student.xsd">
+	<Student age="20" number="201502" sex="男">
+		<name>zhansna </name>
+		<phone>18811537110</phone>
+	</Student>
+	<Student age="20" number="201503" sex="女">
+		<name>王五</name>
+		<phone>18811537110</phone>
+	</Student>
+</Students>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="Sint">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="30"/>
+			<xs:maxExclusive value="60"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Stoken">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="男"/>
+			<xs:enumeration value="女"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="classtoken">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="软工1501"/>
+			<xs:enumeration value="软工1502"/>
+			<xs:enumeration value="软工1503"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="listofclasstoken">
+		<xs:list itemType="classtoken"/>
+	</xs:simpleType>
+	<xs:element name="School">
+		<xs:complexType>
+			<xs:all>
+				<xs:element name="Teachers">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Teacher" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="name" type="xs:string"/>
+										<xs:element name="whichsubject" type="xs:string"/>
+									</xs:sequence>
+									<xs:attribute name="number" type="xs:int"/>
+									<xs:attribute name="sex" type="Stoken"/>
+									<xs:attribute name="age" type="Sint"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+					<xs:unique name="NumberUnique">
+						<xs:selector xpath="Teacher"/>
+						<xs:field xpath="@number"/>
+					</xs:unique>
+				</xs:element>
+				<xs:element name="Subjects">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Subject" minOccurs="1" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="NameofSub" type="xs:string"/>
+										<xs:element name="classroom" type="listofclasstoken"/>
+									</xs:sequence>
+									<xs:attribute name="NumofSub" type="xs:int"/>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+					<xs:unique name="NumberofSubUnique">
+						<xs:selector xpath="Subject"/>
+						<xs:field xpath="@NumofSub"/>
+					</xs:unique>
+				</xs:element>
+			</xs:all>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="pas">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="\d{6,9}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="B">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="user">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="password" type="pas" use="optional"/>
+				<xs:attribute name="blo" type="B" use="optional"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="login">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded" minOccurs="1">
+				<xs:element name="username" type="user"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

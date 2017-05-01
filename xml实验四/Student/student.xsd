@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:simpleType name="Ssex">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="男"/>
+			<xs:enumeration value="女"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Sage">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="19"/>
+			<xs:maxInclusive value="23"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Snumber">
+		<xs:restriction base="xs:integer">
+		<xs:pattern value="2015\d{1,3}"></xs:pattern>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Sphone">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="1[34578]\d{9}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="SC">
+		<xs:restriction base="xs:token">
+			<xs:enumeration value="软工1501"/>
+			<xs:enumeration value="软工1502"/>
+			<xs:enumeration value="软工1503"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Sclassroom">
+		<xs:list itemType="SC"/>
+	</xs:simpleType>
+	<xs:element name="Students">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Student" minOccurs="1" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="name" type="xs:string"/>
+							<xs:element name="phone" type="Sphone"/>
+						</xs:sequence>
+						<xs:attribute name="number" type="Snumber"/>
+						<xs:attribute name="sex" type="Ssex"/>
+						<xs:attribute name="age" type="Sage" use="required"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:unique name="num">
+			<xs:selector xpath="Student/number"/>
+			<xs:field xpath="."/>
+		</xs:unique>
+	</xs:element>
+</xs:schema>

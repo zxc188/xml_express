@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><login xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="user.xsd">
+	<username blo="1" password="123456789">admin</username>
+	<username blo="2" password="123456">201502</username>
+	<username blo="2" password="123456">201503</username>
+</login>

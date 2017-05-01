@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<School xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="School.xsd" xmlns:tn="http://www.test.com">
+	<Teachers>
+		<Teacher number="0001" age="30" sex="女">
+			<name>侯霞</name>
+			<whichsubject>xml</whichsubject>
+		</Teacher>
+		<Teacher number="0002" age="30" sex="男">
+			<name>郝保水</name>
+			<whichsubject>android</whichsubject>
+		</Teacher>
+		<Teacher number="0003" age="30" sex="男">
+			<name>陈若愚</name>
+			<whichsubject>c语言</whichsubject>
+		</Teacher>
+	</Teachers>
+	<Subjects>
+		<Subject NumofSub="0001">
+			<NameofSub>xml</NameofSub>
+			<classroom>软工1501</classroom>
+		</Subject>
+		<Subject NumofSub="0002">
+			<NameofSub>android</NameofSub>
+			<classroom>软工1501</classroom>
+		</Subject>
+		<Subject NumofSub="0003">
+			<NameofSub>c语言</NameofSub>
+			<classroom>软工1501 软工1502</classroom>
+		</Subject>
+	</Subjects>
+</School>
